@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESP32 IoT Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌡️ Sıcaklık & Nem Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>🌡️ ESP32 IoT Dashboard</h1>
+<header>
+    <h1>🌡️ Sıcaklık & Nem Takip Paneli</h1>
+</header>
 
-    <div class="cards">
-      <div class="card">
-        <h2>Sıcaklık</h2>
-        <p id="temp">-- °C</p>
-      </div>
+<div class="container">
 
-      <div class="card">
-        <h2>Nem</h2>
-        <p id="hum">-- %</p>
-      </div>
+    <!-- Anlık Değerler -->
+    <div class="card live">
+        <h2>Anlık Değerler</h2>
+        <div class="values">
+            <div class="valueBox">
+                <span class="label">Sıcaklık</span>
+                <span id="temp" class="value">--</span>
+                <span class="unit">°C</span>
+            </div>
+            <div class="valueBox">
+                <span class="label">Nem</span>
+                <span id="hum" class="value">--</span>
+                <span class="unit">%</span>
+            </div>
+        </div>
     </div>
 
-    <div class="chart-box">
-      <canvas id="liveChart"></canvas>
+    <!-- Analiz -->
+    <div class="card analysis">
+        <h2>Analiz</h2>
+        <div class="analysisBoxes">
+            <div class="aBox">
+                <span>Min</span>
+                <p id="minVal">--</p>
+            </div>
+            <div class="aBox">
+                <span>Ort.</span>
+                <p id="avgVal">--</p>
+            </div>
+            <div class="aBox">
+                <span>Max</span>
+                <p id="maxVal">--</p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- Grafik -->
+    <div class="card">
+        <h2>Geçmiş Sıcaklık Grafiği</h2>
+        <canvas id="chartCanvas"></canvas>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
