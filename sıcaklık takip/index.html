@@ -6,11 +6,13 @@
 <title>🌡️ Sıcaklık & Nem Dashboard</title>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
 
 <header>
     <h1>🌡️ Sıcaklık & Nem Takip Paneli</h1>
+    <button id="themeToggle">Karanlık/Aydınlık</button>
 </header>
 
 <div class="container">
@@ -51,9 +53,29 @@
         </div>
     </div>
 
+  <!-- Tarih Aralığı Filtre -->
+<div class="card filter-card">
+    <h2>Filtreleme</h2>
+    <div class="filter-container">
+        <div class="date-input">
+            <label for="startDate">Başlangıç:</label>
+            <input type="date" id="startDate">
+        </div>
+        <div class="date-input">
+            <label for="endDate">Bitiş:</label>
+            <input type="date" id="endDate">
+        </div>
+        <div class="filter-buttons">
+            <button id="filterBtn">Uygula</button>
+            <button id="downloadCSV">CSV İndir</button>
+        </div>
+    </div>
+</div>
+
+
     <!-- Grafik -->
     <div class="card">
-        <h2>Geçmiş Sıcaklık Grafiği</h2>
+        <h2>Geçmiş Sıcaklık & Nem Grafiği</h2>
         <canvas id="chartCanvas"></canvas>
     </div>
 
