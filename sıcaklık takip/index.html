@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESP32 IoT Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🌡️ ESP32 IoT Dashboard</h1>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Sıcaklık</h2>
+        <p id="temp">-- °C</p>
+      </div>
+
+      <div class="card">
+        <h2>Nem</h2>
+        <p id="hum">-- %</p>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <canvas id="liveChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
