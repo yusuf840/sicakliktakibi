@@ -120,6 +120,8 @@ function downloadCSV() {
     saveAs(blob, "sicaklik_nem_verileri.csv");
 }
 
-// Her 5 saniyede bir Firebase'den veri çek
+// Her 5 saniyede bir Firebase'den veri çe
+
 setInterval(getLatestAndHistory, 5000);
 getLatestAndHistory();
+
