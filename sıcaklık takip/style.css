@@ -1,52 +1,84 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: #0a0f17;
-  font-family: Arial, sans-serif;
-  color: white;
+    margin: 0;
+    background: #f5f6fa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+header {
+    background: #4c6ef5;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    box-shadow: 0 4px 12px #0003;
 }
 
 .container {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-  padding-top: 20px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #00c9ff;
-}
-
-.cards {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
 }
 
 .card {
-  flex: 1;
-  background: #111927;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 10px #000;
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #0002;
+    animation: fadeIn 0.5s ease;
 }
 
 .card h2 {
-  margin: 0;
-  margin-bottom: 10px;
-  color: #00aaff;
+    margin-top: 0;
+    color: #2c3e50;
+    text-align: center;
 }
 
-.card p {
-  font-size: 26px;
-  margin: 0;
+.values {
+    display: flex;
+    justify-content: space-around;
 }
 
-.chart-box {
-  background: #111927;
-  padding: 20px;
-  border-radius: 12px;
+.valueBox {
+    text-align: center;
+    padding: 10px;
+}
+
+.value {
+    font-size: 45px;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
+
+.unit {
+    font-size: 18px;
+    color: #666;
+}
+
+.analysisBoxes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.aBox {
+    text-align: center;
+    padding: 10px;
+}
+
+.aBox p {
+    font-size: 30px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .values, .analysisBoxes {
+        flex-direction: column;
+    }
 }
