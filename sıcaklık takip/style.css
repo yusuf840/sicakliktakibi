@@ -1,9 +1,17 @@
+/* GENEL STİL */
 body {
     margin: 0;
     background: #f5f6fa;
     font-family: "Segoe UI", sans-serif;
+    transition: background 0.3s, color 0.3s;
 }
 
+body.dark {
+    background: #1e1e2f;
+    color: #f5f6fa;
+}
+
+/* HEADER */
 header {
     background: #4c6ef5;
     color: white;
@@ -11,14 +19,35 @@ header {
     text-align: center;
     font-size: 22px;
     box-shadow: 0 4px 12px #0003;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+header button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    color: #4c6ef5;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+header button:hover {
+    background: #3b54c3;
+    color: white;
+}
+
+/* CONTAINER */
 .container {
     max-width: 1000px;
     margin: 20px auto;
     padding: 10px;
 }
 
+/* KARTLAR */
 .card {
     background: white;
     padding: 20px;
@@ -26,14 +55,25 @@ header {
     border-radius: 15px;
     box-shadow: 0 4px 15px #0002;
     animation: fadeIn 0.5s ease;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark .card {
+    background: #2c2c3a;
+    color: #f5f6fa;
 }
 
 .card h2 {
     margin-top: 0;
-    color: #2c3e50;
     text-align: center;
+    color: #2c3e50;
 }
 
+body.dark .card h2 {
+    color: #f5f6fa;
+}
+
+/* ANLIK DEĞERLER */
 .values {
     display: flex;
     justify-content: space-around;
@@ -56,6 +96,11 @@ header {
     color: #666;
 }
 
+body.dark .unit {
+    color: #ccc;
+}
+
+/* ANALİZ */
 .analysisBoxes {
     display: flex;
     justify-content: space-around;
@@ -72,13 +117,82 @@ header {
     font-weight: bold;
 }
 
+/* GRAFİK */
+canvas {
+    max-width: 100%;
+    height: 300px;
+}
+
+/* FADE ANİMASYONU */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* FİLTRELEME KARTI */
+.filter-card .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.filter-card .date-input {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 150px;
+}
+
+.filter-card .date-input label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.filter-card .date-input input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+body.dark .filter-card .date-input input {
+    background: #3b3b4b;
+    color: #f5f6fa;
+    border: 1px solid #555;
+}
+
+.filter-card .filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-card .filter-buttons button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    background-color: #4c6ef5;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.filter-card .filter-buttons button:hover {
+    background-color: #3b54c3;
+}
+
+/* RESPONSİVE */
 @media (max-width: 600px) {
-    .values, .analysisBoxes {
+    .values, .analysisBoxes, .filter-card .filter-container {
         flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-card .filter-buttons {
+        justify-content: space-between;
     }
 }
